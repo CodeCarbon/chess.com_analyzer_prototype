@@ -1,6 +1,5 @@
 //--------------------------------------DEFINITIONS--------------------------------------//
 
-
 const debug = true;
 const MAX_DELAY = 2; //sec
 const MAX_ANALYZE_TIME = 4; //sec
