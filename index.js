@@ -50,7 +50,6 @@ var peices = {
 var _fen = ""
 for (let i = 8; i >= 1; i--) {
     const element = document.querySelector(`#board-single > .piece.square-${i}8`)
-    console.log(element)
     if (element == null) break
     _fen = _fen + MAPS.fen[element.classList[1]]
 }
