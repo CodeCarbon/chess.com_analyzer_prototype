@@ -1,5 +1,6 @@
 //--------------------------------------DEFINITIONS--------------------------------------//
 
+
 const debug = true;
 const MAX_DELAY = 2; //sec
 const MAX_ANALYZE_TIME = 4; //sec
@@ -48,8 +49,9 @@ var peices = {
 
 var _fen = ""
 for (let i = 8; i >= 1; i--) {
-    const element = document.querySelector(`#board-single > square-${i}8`)
-    if (element == null) break;
+    const element = document.querySelector(`#board-single > .piece.square-${i}8`)
+    console.log(element)
+    if (element == null) break
     _fen = _fen + MAPS.fen[element.classList[1]]
 }
 const __fen = _fen.toUpperCase()
@@ -62,7 +64,7 @@ const startFen = _fen.length == 8 ? _fen + "/pppppppp/8/8/8/8/PPPPPPPP/" + __fen
 if (debug) {
     console.log("Team :", team);
     console.log("Turn :", Turn);
-    console.log("Refrence FEN :", "length > ", _fen.length, "condition >", _fen.length == 8);
+    console.log("Refrence FEN :", "FEN >",_fen  , "length > ", _fen.length, "condition >", _fen.length == 8);
     console.log("FEN :", startFen);
 }
 
