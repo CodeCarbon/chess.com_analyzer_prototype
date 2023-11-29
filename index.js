@@ -1,6 +1,5 @@
 //--------------------------------------DEFINITIONS--------------------------------------//
 
-
 const debug = true;
 const MAX_DELAY = 2; //sec
 const MAX_ANALYZE_TIME = 4; //sec
@@ -60,7 +59,8 @@ const __fen = _fen[0] == "R" ? _fen.toLowerCase() : _fen.toUpperCase()
 const Turn = document.querySelector(".clock-bottom").classList.contains("clock-player-turn") ? team : (team == "w" ? "b" : "w")
 //THE OPPOSITE TEAM MIGHT HAVE TAKEN THE KNIGHT OUT FIRST BEFORE THE CODE INITLIZED THE FEN SO, if there is break when the element isn't found as an result we can check if the length is more than 8 if it is we have successfully got the all positions else the rare condition aplied so we have to use the deafult fen expecting the deafult fe is in the starting
 
-const startFen = _fen.length == 8 ? _fen + "/pppppppp/8/8/8/8/PPPPPPPP/" + __fen + " " + Turn + " " + "KQkq - 0 1" : "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR " + Turn + " " + "KQkq - 0 1"
+const pwn = _fen[0] == "R" ? "PPPPPPPP" : "pppppppp"
+const startFen = _fen.length == 8 ? (_fen + "/" + pwn +"/8/8/8/8/") + (pwn[0] == "P" ? pwn.toLowerCase() : pwn.toUpperCase()) + ("/" + __fen + " " + Turn + " " + "KQkq - 0 1") : "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR " + Turn + " " + "KQkq - 0 1"
 
 if (debug) {
     console.log("Team :", team);
